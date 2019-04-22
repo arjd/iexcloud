@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -6,7 +6,7 @@ interface KVP {
 
 export const delayedQuote = async (symbol: string): Promise<DelayedQuote> => {
   const endpoint = `/stock/${symbol}/delayed-quote`;
-  const data: KVP = await iexApiRequest(endpoint);
+  const data: KVP = await iexApiRequest.get(endpoint);
   // console.log(data);
   const result = Object.assign(new DelayedQuote(), data);
   return result;

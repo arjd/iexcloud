@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -31,7 +31,7 @@ export const endOfDay = async (
   if (chartSimplify) {
     endpoint = endpoint + `&chartSimplify=true`;
   }
-  const data: KVP[] = await iexApiRequest(endpoint);
+  const data: KVP[] = await iexApiRequest.get(endpoint);
   const result = data.map((o: KVP) => {
     const r = Object.assign(new EndOfDay(), o);
     r.symbol = symbol;

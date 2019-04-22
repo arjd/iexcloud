@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -9,7 +9,7 @@ export const news = async (
   lastN: number = 10
 ): Promise<NewsItem[]> => {
   const endpoint = `/stock/${symbol}/news/last/${lastN}`;
-  const data: KVP[] = await iexApiRequest(endpoint);
+  const data: KVP[] = await iexApiRequest.get(endpoint);
   const result = data.map((o: KVP) => {
     const r = Object.assign(new NewsItem(), o);
     r.symbol = symbol;

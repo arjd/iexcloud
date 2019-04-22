@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexaccount.service";
+import iexApiRequest from "./iexaccount.service";
 
 interface KVP {
   [k: string]: any;
@@ -13,6 +13,6 @@ type UsageType =
 
 export const accountUsage = async (type: UsageType): Promise<any> => {
   const endpoint = `/account/metadata/${type}`;
-  const data: KVP = await iexApiRequest(endpoint);
+  const data: KVP = await iexApiRequest.get(endpoint);
   return data;
 };

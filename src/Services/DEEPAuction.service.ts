@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -6,7 +6,7 @@ interface KVP {
 
 export const auction = async (symbol: string): Promise<Auction> => {
   const endpoint = `/deep/auction?symbols=${symbol}`;
-  const data: KVP = await iexApiRequest(endpoint);
+  const data: KVP = await iexApiRequest.get(endpoint);
   // console.log(data);
   const result = Object.assign(new Auction(), data);
   return result;

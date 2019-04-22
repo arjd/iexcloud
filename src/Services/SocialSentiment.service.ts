@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -16,11 +16,11 @@ export const socialSentiment = async (
     endpoint = endpoint +"/"+ date.replace(/-/g, "");
   }
   if (type.includes("daily")) {
-    const data: KVP = await iexApiRequest(endpoint);
+    const data: KVP = await iexApiRequest.get(endpoint);
     const result: SocialSentiment = Object.assign(new SocialSentiment(),data);
     return result;
   } else {
-    const data: KVP[] = await iexApiRequest(endpoint);
+    const data: KVP[] = await iexApiRequest.get(endpoint);
     const result = data.map((o: KVP) => {
       const r = Object.assign(new SocialSentiment(), o);
       r.symbol = symbol;

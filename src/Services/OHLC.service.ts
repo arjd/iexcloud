@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -6,7 +6,7 @@ interface KVP {
 
 export const ohlc = async (symbol: string): Promise<OHLC> => {
   const endpoint = `/stock/${symbol}/ohlc`;
-  const data: KVP = await iexApiRequest(endpoint);
+  const data: KVP = await iexApiRequest.get(endpoint);
   const result = new OHLC();
   result.open = data.open.price;
   result.close = data.close.price;

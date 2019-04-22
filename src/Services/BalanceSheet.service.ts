@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -20,7 +20,7 @@ export const balanceSheet = async (
   period: string = "quarter"
 ): Promise<BalanceSheet[]> => {
   const endpoint = `/stock/${symbol}/balance-sheet/${lastN}?period=${period}`;
-  const data: KVP = await iexApiRequest(endpoint);
+  const data: KVP = await iexApiRequest.get(endpoint);
   // console.log(data);
   const result: any[] = data.balancesheet;
   return result.map((o: KVP) => {

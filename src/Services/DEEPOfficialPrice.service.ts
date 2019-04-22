@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -10,7 +10,7 @@ export const officialPrice = async (
   symbol: string
 ): Promise<DEEPOfficialPrice> => {
   const endpoint = `/deep/official-price?symbols=${symbol}`;
-  const data: KVP = await iexApiRequest(endpoint);
+  const data: KVP = await iexApiRequest.get(endpoint);
   const result = Object.assign(new DEEPOfficialPrice(), data);
   return result;
 };

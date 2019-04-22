@@ -1,6 +1,6 @@
 import { Quote } from "./Quote.service";
 
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -8,7 +8,7 @@ interface KVP {
 
 export const book = async (symbol: string): Promise<Book> => {
   const endpoint = `/stock/${symbol}/book`;
-  const data: KVP = await iexApiRequest(endpoint);
+  const data: KVP = await iexApiRequest.get(endpoint);
   const result = Object.assign(new Book(), data);
   return result;
 };

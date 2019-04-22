@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 import { Quote } from "./Quote.service";
 
@@ -13,7 +13,7 @@ export const collection = async (
   collectionName: string
 ): Promise<Quote[]> => {
   const endpoint = `/stock/market/collection/${collectionType}?collectionName=${collectionName}`;
-  const data: KVP[] = await iexApiRequest(endpoint);
+  const data: KVP[] = await iexApiRequest.get(endpoint);
   const result = data.map(o => Object.assign(new Quote(), o));
   return result;
 };

@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -6,7 +6,7 @@ interface KVP {
 
 export const tops = async (symbol: string): Promise<TOPS[]> => {
   const endpoint = `/tops?symbols=${symbol}`;
-  const data: KVP[] = await iexApiRequest(endpoint);
+  const data: KVP[] = await iexApiRequest.get(endpoint);
   const result = data.map((o: KVP) => Object.assign(new TOPS(), o));
   return result;
 };

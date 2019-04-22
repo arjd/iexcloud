@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 import { Intraday } from "./Intraday.service"
 
@@ -70,9 +70,9 @@ export const history = async (
   if (simplify) {
     endpoint = endpoint + '&chartSimplify=true';
   }
-  const data: KVP[] = await iexApiRequest(endpoint);
+  const data: KVP[] = await iexApiRequest.get(endpoint);
   const result = data.map((o: KVP) => {
-    let r = !intraday ? Object.assign(new EndOfDay(), o) 
+    const r = !intraday ? Object.assign(new EndOfDay(), o) 
       : Object.assign(new Intraday(), o);
     r.symbol = symbol;
     return r;

@@ -1,4 +1,4 @@
-import { iexApiRequest } from "./iexcloud.service";
+import iexApiRequest from "./iexcloud.service";
 
 interface KVP {
   [k: string]: any;
@@ -6,7 +6,7 @@ interface KVP {
 
 export const deepTrades = async (symbol: string): Promise<DEEPTrade[]> => {
   const endpoint = `/deep/trades?symbols=${symbol}`;
-  const data: KVP = await iexApiRequest(endpoint);
+  const data: KVP = await iexApiRequest.get(endpoint);
   // console.log(data);
   const result: DEEPTrade[] = Object.keys(data).map( (key:string)  => {
     const r: DEEPTrade = Object.assign(new DEEPTrade(), data.key);
