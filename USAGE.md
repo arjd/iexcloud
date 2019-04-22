@@ -103,6 +103,8 @@ export declare const book: (symbol: string) => Promise<Book>;
 
 export declare const cashFlowStatement: (symbol: string, period?: string, lastN: number =1) => Promise<CashFlowStatement[]>;
 
+export declare const ceoCompensation: (symbol: string) => Promise<CeoCompensation>;
+
 export declare type CollectionType = "sector" | "tag" | "list";
 
 export declare const collection: (collectionType: CollectionType, collectionName: string) => Promise<Quote[]>;
@@ -135,6 +137,30 @@ export declare const endOfDayCloseOnly: (symbol: string, period?: timePeriod, ch
 export declare const estimates: (symbol: string, lastN?: number) => Promise<Estimates[]>;
 
 export declare const financials: (symbol: string, lastn?: number) => Promise<Financials[]>;
+
+export declare const history: (symbol: string, 
+  {changeFromClose= true,
+   closeOnly=  false,
+   chartByDay=false,
+   date = "",
+   iexOnly = false,
+   lastN = 0,
+   interval = 1,
+   period = "1m",
+   reset = false,
+   simplify = false}?: {
+    changeFromClose?: boolean | undefined;
+    closeOnly?: boolean | undefined;
+    chartByDay?: boolean | undefined;
+    date?: string | undefined;
+    iexOnly?: boolean | undefined;
+    interval?: number | undefined;
+    lastN?: number | undefined;
+    period?: string | undefined;
+    reset?: boolean | undefined;
+    simplify?: boolean | undefined;
+   } ={}
+) => Promise<(EndOfDay | Intraday)[]>;
 
 export declare const iexApiRequest: (endpoint: string) => Promise<any>;
 
