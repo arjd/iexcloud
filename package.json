@@ -54,7 +54,6 @@
     "@types/superagent": "^3.8.6",
     "dotenv": "6.2.0",
     "eventsource": "1.0.7",
-    "superagent": "^4.1.0",
     "superagent-throttle": "^1.0.1"
   }
 }
