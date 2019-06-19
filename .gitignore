@@ -3,6 +3,7 @@ node_modules
 /coverage
 .DS_Store
 .env
+.Rhistory
 .Rproj.*/*
 *.R
 *.Rproj
