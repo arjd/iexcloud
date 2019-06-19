@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
 import * as EventSource  from "eventsource"
 import * as superagent from "superagent";
-import {default as Throttle} from 'superagent-throttle';
+import Throttle from 'superagent-throttle';
 
 const throttler = new Throttle({
   active: true,
