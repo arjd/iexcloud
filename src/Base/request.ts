@@ -3,10 +3,13 @@ import * as EventSource  from "eventsource"
 import * as superagent from "superagent";
 import Throttle from 'superagent-throttle';
 
+const ALLOWED_REQUESTS = 100;
+const LIMIT_IN_MS = 1000;
+
 const throttler = new Throttle({
   active: true,
-  rate: 100,
-  ratePer: 60000
+  rate: ALLOWED_REQUESTS,
+  ratePer: LIMIT_IN_MS
 });
 
 const baseURL = "https://cloud.iexapis.com/";
@@ -22,12 +25,14 @@ const apiversion = process.env.IEXCLOUD_API_VERSION!;
 export class IEX {
   constructor(public token: string) { }
 
-  public get(endpoint: string): Promise<any> {
-    return this.request(superagent.get(this.constructURL(endpoint))).then((res : superagent.Response) => res.body);
+  public async get(endpoint: string): Promise<any> {
+    const res = await this.request(superagent.get(this.constructURL(endpoint)));
+    return res.body;
   };
 
-  public post(endpoint: string, body: object): Promise<any> {
-    return this.request(superagent.post(this.constructURL(endpoint)).send(body)).then((res : superagent.Response) => res.body);
+  public async post(endpoint: string, body: object): Promise<any> {
+    const res = await this.request(superagent.post(this.constructURL(endpoint)).send(body));
+    return res.body;
   }
   private environment() {
     return this.token && this.token[0]==="T" ? sandboxURL : baseURL;
