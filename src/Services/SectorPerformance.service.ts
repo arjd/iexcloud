@@ -11,13 +11,6 @@ export const sectorPerformance = async (): Promise<SectorPerformance[]> => {
   return result;
 };
 
-export interface IEXSectorPerformance {
-  type: string;
-  name: string;
-  performance: number;
-  lastUpdated: number;
-}
-
 export class SectorPerformance {
   public type: string = "";
   public name: string = "";

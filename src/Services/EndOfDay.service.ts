@@ -40,26 +40,7 @@ export const endOfDay = async (
   return result;
 };
 
-export interface IEXEndOfDay {
-  symbol: string;
-  date: string;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-  volume: number;
-  uOpen: number;
-  uHigh: number;
-  uLow: number;
-  uClose: number;
-  uVolume: number;
-  change: number;
-  changePercent: number;
-  label: string;
-  changeOverTime: number;
-}
-
-export class EndOfDay implements IEXEndOfDay {
+export class EndOfDay {
   public symbol: string = "";
   public date: string = "";
   public open: number = 0;

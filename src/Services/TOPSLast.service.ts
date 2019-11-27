@@ -11,13 +11,6 @@ export const topsLast = async (symbol: string): Promise<TOPSLast[]> => {
   return result;
 };
 
-export interface IEXTOPSLast {
-  symbol: string;
-  price: number;
-  size: number;
-  time: number;
-}
-
 export class TOPSLast {
   public symbol: string = "";
   public price: number = 0;

@@ -11,15 +11,6 @@ export const marketSymbols = async (): Promise<MarketSymbol[]> => {
   return result;
 };
 
-export interface IEXMarketSymbol {
-  symbol: string;
-  name: string;
-  date: string;
-  isEnabled: boolean;
-  type: string;
-  iexId: string;
-}
-
 export class MarketSymbol {
   public symbol: string = "";
   public name: string = "";

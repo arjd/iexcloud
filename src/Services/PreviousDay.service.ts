@@ -11,19 +11,6 @@ export const previousDay = async (symbol: string): Promise<PreviousDay> => {
   return result;
 };
 
-export interface IEXPreviousDay {
-  symbol: string;
-  date: string;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-  volume: number;
-  unadjustedVolume: number;
-  change: number;
-  changePercent: number;
-}
-
 export class PreviousDay {
   public symbol: string = "";
   public date: string = "";

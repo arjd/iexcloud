@@ -19,21 +19,7 @@ export const earnings = async (
   return result;
 };
 
-export interface IEXEarnings {
-  symbol: string;
-  actualEPS: number;
-  consensusEPS: number;
-  announceTime: string;
-  numberOfEstimates: number;
-  EPSSurpriseDollar: number;
-  EPSReportDate: string;
-  fiscalPeriod: string;
-  fiscalEndDate: string;
-  yearAgo: number;
-  yearAgoChangePercent: number;
-}
-
-export class Earnings implements IEXEarnings {
+export class Earnings {
   public symbol: string="";
   public actualEPS: number = 0;
   public consensusEPS: number = 0;

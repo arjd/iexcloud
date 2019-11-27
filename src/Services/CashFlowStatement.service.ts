@@ -34,27 +34,7 @@ export const cashFlowStatement = async (
   });
 };
 
-export interface IEXCashFlow {
-  symbol: string;
-  reportDate: string;
-  netIncome: number;
-  depreciation: number;
-  changesInReceivables: number;
-  changesInInventories: number;
-  cashChange: number;
-  cashFlow: number;
-  capitalExpenditures: number;
-  investments: number;
-  investingActivityOther: number;
-  totalInvestingCashFlows: number;
-  dividendsPaid: number;
-  netBorrowings: number;
-  otherFinancingCashFlows: number;
-  cashFlowFinancing: number;
-  exchangeRateEffect: number | null;
-}
-
-export class CashFlowStatement implements IEXCashFlow {
+export class CashFlowStatement {
   public symbol:string = "";
   public reportDate: string = "";
   public netIncome: number = 0;

@@ -11,16 +11,6 @@ export const accountMetadata = async (): Promise<AccountMetaData> => {
   return result;
 };
 
-export interface IEXAccountMetaData {
-  payAsYouGoEnabled: boolean;
-  effectiveDate: number;
-  endDateEffective: number;
-  subscriptionTermType: string;
-  tierName: string;
-  messageLimit: number;
-  messagesUsed: number;
-}
-
 export class AccountMetaData {
   public payAsYouGoEnabled: boolean = false;
   public effectiveDate: number = 0;

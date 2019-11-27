@@ -18,16 +18,6 @@ export const ohlc = async (symbol: string): Promise<OHLC> => {
   return result;
 };
 
-export interface IEXOHLC {
-  symbol: string;
-  open: number;
-  close: number;
-  high: number;
-  low: number;
-  openTime: number;
-  closeTime: number;
-}
-
 export class OHLC {
   public symbol: string = "";
   public open: number = 0;

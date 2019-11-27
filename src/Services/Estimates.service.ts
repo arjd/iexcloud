@@ -19,14 +19,6 @@ export const estimates = async (
   return result;
 };
 
-export interface IEXEstimates {
-  consensusEPS: number;
-  numberOfEstimates: number;
-  fiscalPeriod: string;
-  fiscalEndDate: string;
-  reportDate: string;
-}
-
 export class Estimates {
   public consensusEPS: number = 0;
   public numberOfEstimates: number = 0;

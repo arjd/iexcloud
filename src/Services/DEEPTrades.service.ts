@@ -17,20 +17,7 @@ export const deepTrades = async (symbol: string): Promise<DEEPTrade[]> => {
   return result;
 };
 
-export interface IEXDEEPTrade {
-  symbol: string;
-  price: number;
-  size: number;
-  tradeId: number;
-  isISO: boolean;
-  isOddLot: boolean;
-  isOutsideRegularHours: boolean;
-  isSinglePriceCross: boolean;
-  isTradeThroughExempt: boolean;
-  timestamp: number;
-}
-
-export class DEEPTrade implements IEXDEEPTrade {
+export class DEEPTrade {
   public symbol: string = "";
   public price: number = 0;
   public size: number = 0;

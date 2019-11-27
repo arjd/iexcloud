@@ -30,38 +30,7 @@ export const balanceSheet = async (
   });
 };
 
-export interface IEXBalanceSheet {
-  symbol: string;
-  reportDate: string;
-  currentCash: number;
-  shortTermInvestments: number;
-  receivables: number;
-  inventory: number;
-  otherCurrentAssets: number;
-  currentAssets: number;
-  longTermInvestments: number;
-  propertyPlantEquipment: number;
-  goodwill: number | null;
-  intangibleAssets: number | null;
-  otherAssets: number;
-  totalAssets: number;
-  accountsPayable: number;
-  currentLongTermDebt: number;
-  otherCurrentLiabilities: number;
-  totalCurrentLiabilities: number;
-  longTermDebt: number;
-  otherLiabilities: number;
-  minorityInterest: number;
-  totalLiabilities: number;
-  commonStock: number;
-  retainedEarnings: number;
-  treasuryStock: number | null;
-  capitalSurplus: number | null;
-  shareholderEquity: number;
-  netTangibleAssets: number;
-}
-
-export class BalanceSheet implements IEXBalanceSheet {
+export class BalanceSheet {
   public symbol: string = "";
   public reportDate: string = "";
   public currentCash: number = 0;

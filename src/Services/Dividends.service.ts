@@ -21,20 +21,7 @@ export const dividends = async (
   return result;
 };
 
-export interface IEXDividends {
-  symbol: string;
-  exDate: string;
-  paymentDate: string;
-  recordDate: string;
-  declaredDate: string;
-  amount: number;
-  flag: string;
-  currency: string;
-  description: string;
-  frequency: string;
-}
-
-export class Dividends implements IEXDividends {
+export class Dividends {
   public symbol: string = "";
   public exDate: string = "";
   public paymentDate: string = "";

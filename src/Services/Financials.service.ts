@@ -30,31 +30,7 @@ export const financials = async (
   return result;
 };
 
-export interface IEXFinancials {
-  symbol: string;
-  reportDate: string;
-  grossProfit: number;
-  costOfRevenue: number;
-  operatingRevenue: number;
-  totalRevenue: number;
-  operatingIncome: number;
-  netIncome: number;
-  researchAndDevelopment: number;
-  operatingExpense: number;
-  currentAssets: number;
-  totalAssets: number;
-  totalLiabilities: number;
-  currentCash: number;
-  currentDebt: number;
-  totalCash: number;
-  totalDebt: number;
-  shareholderEquity: number;
-  cashChange: number;
-  cashFlow: number;
-  operatingGainsLosses: number | null;
-}
-
-export class Financials implements IEXFinancials {
+export class Financials {
   public symbol: string = "";
   public reportDate: string = "";
   public grossProfit: number = 0;

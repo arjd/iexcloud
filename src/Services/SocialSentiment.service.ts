@@ -31,17 +31,7 @@ export const socialSentiment = async (
   return null;
 };
 
-export interface IEXSocialSentiment {
-  symbol: string;
-  date: string;
-  minute: string | null;
-  sentiment: number;
-  totalScores: number;
-  positive: number;
-  negative: number;
-}
-
-export class SocialSentiment implements IEXSocialSentiment {
+export class SocialSentiment {
   public symbol: string = "";
   public date: string = "";
   public minute: string | null = null;

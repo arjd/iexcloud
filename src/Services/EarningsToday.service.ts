@@ -21,17 +21,7 @@ export const earningsToday = async (
   return result;
 };
 
-export interface IEXEarningsToday {
-  symbol: string;
-  consensusEPS: number;
-  announceTime: number;
-  numberOfEstimates: number;
-  fiscalPeriod: string;
-  fiscalEndDate: string;
-  quote: KVP
-}
-
-export class EarningsToday implements IEXEarningsToday {
+export class EarningsToday {
   public symbol: string="";
   public consensusEPS: number = 0;
   public announceTime: number = 0;

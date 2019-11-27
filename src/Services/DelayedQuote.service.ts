@@ -12,18 +12,7 @@ export const delayedQuote = async (symbol: string): Promise<DelayedQuote> => {
   return result;
 };
 
-export interface IEXDelayedQuote {
-  symbol: string;
-  delayedPrice: number;
-  delayedSize: number;
-  delayedPriceTime: number;
-  high: number;
-  low: number;
-  totalVolume: number;
-  processedTime: number;
-}
-
-export class DelayedQuote implements IEXDelayedQuote {
+export class DelayedQuote {
   public symbol: string = "";
   public delayedPrice: number = 0;
   public delayedSize: number = 0;

@@ -11,22 +11,6 @@ export const tops = async (symbol: string): Promise<TOPS[]> => {
   return result;
 };
 
-export interface IEXTOPS {
-  symbol: string;
-  marketPercent: number;
-  bidSize: number;
-  bidPrice: number;
-  askSize: number;
-  askPrice: number;
-  volume: number;
-  lastSalePrice: number;
-  lastSaleSize: number;
-  lastSaleTime: number;
-  lastUpdated: number;
-  sector: string;
-  securityType: string;
-}
-
 export class TOPS {
   public symbol: string = "";
   public marketPercent: number = 0;

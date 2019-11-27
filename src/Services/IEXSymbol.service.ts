@@ -11,12 +11,6 @@ export const iexSymbols = async (): Promise<IEXSymbol[]> => {
   return result;
 };
 
-export interface IEXSymbolI {
-  symbol: string;
-  date: string;
-  isEnabled: boolean;
-}
-
 export class IEXSymbol {
   public symbol: string = "";
   public date: string = "";

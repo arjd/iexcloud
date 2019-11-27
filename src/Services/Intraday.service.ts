@@ -34,30 +34,6 @@ export const intraday = async (
   return result;
 };
 
-export interface IEXIntraday {
-  date: string;
-  minute: string;
-  label: string;
-  high: number;
-  low: number;
-  average: number;
-  volume: number;
-  notional: number;
-  numberOfTrades: number;
-  marketHigh: number;
-  marketLow: number;
-  marketAverage: number;
-  marketVolume: number;
-  marketNotional: number;
-  marketNumberOfTrades: number;
-  open: number;
-  close: number;
-  marketOpen: number;
-  marketClose: number;
-  changeOverTime: number;
-  marketChangeOverTime: number;
-}
-
 export class Intraday {
   public date: string = "";
   public minute: string = "";

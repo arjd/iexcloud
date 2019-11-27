@@ -11,18 +11,6 @@ export const marketVolume = async (): Promise<MarketVolume[]> => {
   return result;
 };
 
-export interface IEXMarketVolume {
-  mic: string;
-  tapeId: string;
-  venueName: string;
-  volume: number;
-  tapeA: number;
-  tapeB: number;
-  tapeC: number;
-  marketPercent: number;
-  lastUpdated: number;
-}
-
 export class MarketVolume {
   public mic: string = "";
   public tapeId: string = "";

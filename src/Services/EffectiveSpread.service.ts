@@ -17,17 +17,7 @@ export const effectiveSpread = async (
   return result;
 };
 
-export interface IEXEffectiveSpread {
-  symbol: string;
-  volume: number;
-  venue: string;
-  venueName: string;
-  effectiveSpread: number;
-  effectiveQuoted: number;
-  priceImprovement: number;
-}
-
-export class EffectiveSpread implements IEXEffectiveSpread {
+export class EffectiveSpread {
   public symbol: string = "";
   public volume: number = 0;
   public venue: string = "";

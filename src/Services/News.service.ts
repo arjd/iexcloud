@@ -18,19 +18,7 @@ export const news = async (
   return result;
 };
 
-export interface IEXNewsItem {
-  datetime: number;
-  headline: string;
-  source: string;
-  url: string;
-  summary: string;
-  related: string;
-  image: string;
-  lang: string;
-  hasPaywall: boolean;
-}
-
-export class NewsItem implements IEXNewsItem {
+export class NewsItem {
   public datetime: number = 0;
   public headline: string = "";
   public source: string = "";

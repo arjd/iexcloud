@@ -40,14 +40,7 @@ export const endOfDayCloseOnly = async (
   return result;
 };
 
-export interface IEXEndOfDayCloseOnly {
-  symbol: string;
-  date: string;
-  close: number;
-  volume: number;
-}
-
-export class EndOfDayCloseOnly implements IEXEndOfDayCloseOnly {
+export class EndOfDayCloseOnly {
   public symbol: string = "";
   public date: string = "";
   public close: number = 0;

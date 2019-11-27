@@ -15,13 +15,6 @@ export const officialPrice = async (
   return result;
 };
 
-export interface DEEPOfficalPrice {
-  symbol: string;
-  priceType: PriceType;
-  price: number;
-  timestamp: number;
-}
-
 export class DEEPOfficialPrice {
   public symbol: string = "";
   public priceType: PriceType = "Open";

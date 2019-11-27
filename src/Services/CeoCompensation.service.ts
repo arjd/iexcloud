@@ -12,23 +12,7 @@ export const ceoCompensation = async (symbol: string): Promise<CeoCompensation> 
   return result;
 };
 
-export interface IEXCeoCompensation {
-    symbol: string;
-    name: string;
-    companyName: string;
-    location: string;
-    salary: number;
-    bonus: number;
-    stockAwards: number;
-    optionAwards: number;
-    nonEquityIncentives: number;
-    pensionAndDeferred: number;
-    otherComp: number;
-    total: number;
-    year: string;
-}
-
-export class CeoCompensation implements IEXCeoCompensation {
+export class CeoCompensation {
     public symbol: string = "";
     public name: string = "";
     public companyName: string = "";

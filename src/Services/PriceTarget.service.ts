@@ -11,16 +11,7 @@ export const priceTarget = async (symbol: string): Promise<PriceTarget> => {
   return result;
 };
 
-export interface IEXPriceTarget {
-  symbol: string;
-  updatedDate: string;
-  priceTargetAverage: number;
-  priceTargetHigh: number;
-  priceTargetLow: number;
-  numberOfAnalysts: number;
-}
-
-export class PriceTarget implements IEXPriceTarget {
+export class PriceTarget {
   public symbol: string = "";
   public updatedDate: string = "";
   public priceTargetAverage: number = 0;

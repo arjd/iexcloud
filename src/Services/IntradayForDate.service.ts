@@ -38,22 +38,7 @@ export const intradayForDate = async (
   return result;
 };
 
-export interface IEXIntradayIEXOnly {
-  date: string;
-  minute: string;
-  label: string;
-  high: number;
-  low: number;
-  average: number;
-  volume: number;
-  notional: number;
-  numberOfTrades: number;
-  open: number;
-  close: number;
-  changeOverTime: number;
-}
-
-export class IntradayIEXOnly implements IEXIntradayIEXOnly {
+export class IntradayIEXOnly {
   public date: string = "";
   public minute: string = "";
   public label: string = "";

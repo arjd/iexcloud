@@ -11,10 +11,6 @@ export const logoURL = async (symbol: string): Promise<Logo> => {
   return result;
 };
 
-export interface IEXLogo {
-  url: string;
-}
-
 export class Logo {
   public url: string = "";
 }

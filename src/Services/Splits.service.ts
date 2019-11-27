@@ -20,16 +20,7 @@ export const splits = async (
   return result;
 };
 
-export interface IEXSplits {
-  exDate: string;
-  declaredDate: string;
-  ratio: number;
-  toFactor: number;
-  fromFactor: number;
-  description: string;
-}
-
-export class Splits implements IEXSplits {
+export class Splits {
   public exDate: string = "";
   public declaredDate: string = "";
   public ratio: number = 0;
