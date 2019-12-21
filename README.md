@@ -1,13 +1,9 @@
-# iexcloud_api_wrapper
+# iexcloud
 
-[![CircleCI](https://circleci.com/gh/schardtbc/iexcloud_api_wrapper.svg?style=svg)](https://circleci.com/gh/schardtbc/iexcloud_api_wrapper)
+<!-- [![CircleCI](https://circleci.com/gh/schardtbc/iexcloud.svg?style=svg)](https://circleci.com/gh/schardtbc/iexcloud) -->
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest) 
 
-
-A Typescript wrapper for the new iexcloud market data API from IEX Group Inc. All data is returned as Promises for asynchronous data requests.
-
-A complementary [R package](https://github.com/schardtbc/iexcloudR) is also availiable.
-
+A TypeScript wrapper for the IEX Cloud financial data API.
 
 ## Usage
 
@@ -16,11 +12,11 @@ A complementary [R package](https://github.com/schardtbc/iexcloudR) is also avai
 Use the npm cli to install as a dependancy into your project
 
 ```
-npm install --save git+https://git@github.com/schardtbc/iexcloud_api_wrapper
+npm i git+https://git@github.com/schardtbc/iexcloud
 
 // OR
 
-npm i iexcloud_api_wrapper
+npm i iexcloud
 ```
 
 then in your .env file add the following keys
@@ -42,10 +38,10 @@ To test that everything installed correctly and the .env file is properly setup 
 ```javascript
 // reminder: this is an async interface ...it's promises all the way down
 
-const  iex = require( 'iexcloud_api_wrapper' )
+const  iex = require( 'iexcloud' )
 
 const quote = async (sym) => {
-    const quoteData = await iex.quote(sym);
+    const quoteData = await iex.stocks.quote(sym);
     // do something with returned quote data
     console.log(quoteData)
 };
@@ -98,7 +94,7 @@ iexcloud is a product of [IEX Group Inc.]( https://iextrading.com ) which operat
 
 Using iexcloud requires [registration](https://iexcloud.io/cloud-login#/register)  to obtain a unique api key which is used for all data requests.
 
-A majority of the endpoints are charged a usage free which varies by the source and type of data returned. All IEX Group sourced data is free. 
+A majority of the endpoints are charged a usage fee which varies by the source and type of data returned. All IEX Group sourced data is free. 
 
 Each endpoint is assigned a cost in terms of message units.
 
@@ -107,13 +103,12 @@ Each endpoint is assigned a cost in terms of message units.
 | Free | 500,000 | Free
 | Launch | 5,000,000 | $9 |
 | Grow | 100,000,000 | $59($49 paid annually) |
-| Scale | 1,000,000,000 | $ 499 |
+| Scale | 2,000,000,000 | $ 499 |
 
 see https://iexcloud.io/pricing/ for current plans, rates
 
-Save 40% on Grow plan pricing until end of beta period(when?). $29/month paid annually or $39/mo paid monthly.
 
-## Api reference documentation
+## API reference documentation
 
 https://iexcloud.io/docs/api/#introduction
 
@@ -127,8 +122,7 @@ Attribution is required of all users of iexcloud. Put “Powered by IEX Cloud”
 
 Below is a list of the iexcloud APIs that have ([x]) and have not ([ ]) been implemented by this package.
 
-### Account
-
+## Account
 |     | Endpoint       | Message Units | per |
 |-----|----------------|---------------:|-----|
 | [x] | MetaData | 0 | as in free
@@ -136,7 +130,8 @@ Below is a list of the iexcloud APIs that have ([x]) and have not ([ ]) been imp
 | [x] | Pay as you go | 0 | as in free
 
 
-### Stocks
+## Stocks
+<!--FIXME: get correct message units for intraday -->
 |     | Endpoint       | Message Units | per |
 |-----|----------------|---------------:|-----|
 | [x] | Balance Sheet |        3000 | per symbol per period |
@@ -148,12 +143,12 @@ Below is a list of the iexcloud APIs that have ([x]) and have not ([ ]) been imp
 | [x] | Delayed Quote  |           1 |per symbol
 | [x] | Dividends  |              10 |per symbol
 | [x] | Earnings |              1000 |per symbol per period
-| [ ] | Earnings Today|         1051 |per symbol returned
+| [x] | Earnings Today|         1051 |per symbol returned
 | [x] | Effective Spread  |         0  |as in free
 | [x] | Estimates |             10000  |per symbol per period
 | [x] | Financials  |            5000 |per symbol per period
 | [x] | Historical Prices | | |
-| [x] | End of day |    10 |per symbol per day
+| [] | Intraday |    10 |per symbol per day 
 | [x] | Income Statement |  1000 | per symbol per period
 | [ ] | IPO Calendar upcoming-ipos | 100 | per IPO returned
 | [ ] | IPO Calendar today-ipos | 500 | per iPO returned
@@ -175,13 +170,11 @@ Below is a list of the iexcloud APIs that have ([x]) and have not ([ ]) been imp
 | [x] | Splits | 10 | per symbol  per record
 | [x] | Volume by Venue | 20 | per call
 
-### Alternative Data
-|     | Endpoint       | Message Units | per |
-|-----|----------------|---------------:|-----|
-| [x] | News
-| [ ] | Crypto
+## Crypto
+| [ ] | Quote
+<!-- FIXME: still a lot to add here -->
 
-### Reference Data
+## Reference Data
 |     | Endpoint       | Message Units | per |
 |-----|----------------|---------------:|-----|
 | [x] | Symbols | 100 | per call |
@@ -198,8 +191,12 @@ Below is a list of the iexcloud APIs that have ([x]) and have not ([ ]) been imp
 | [ ] | Bonds Symbols
 | [ ] | Crypto Symbols
 
-### Investors Exchange Data [Free]
+## Alternative Data
+|     | Endpoint       | Message Units | per |
+|-----|----------------|---------------:|-----|
+| [x] | News
 
+## Investors Exchange Data [Free]
 |     | Endpoint       |
 |-----|----------------|
 | [x] | TOPS | 
@@ -223,16 +220,14 @@ Below is a list of the iexcloud APIs that have ([x]) and have not ([ ]) been imp
 | [ ] | Stats Recent | 
 | [ ] | Stats Records |
 
-### API System Metadata
+## API System Metadata
 |     | Endpoint       | Message Units | per |
 |-----|----------------|---------------:|-----|
 | [ ] | Status | 0 |
 
 ## In Development at IEX Group
 
-- FOREX CURRANCIES
 - OPTIONS
 - COMMODITIES
 - BONDS
 - REALTME, SCALABLE NOTIFICATIONS
-- EVENT DRIVEN AUTOMATED RULES FOR SERVERLESS DATA ANALYSIS
