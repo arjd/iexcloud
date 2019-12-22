@@ -1,9 +1,10 @@
 # iexcloud
 
-<!-- [![CircleCI](https://circleci.com/gh/schardtbc/iexcloud.svg?style=svg)](https://circleci.com/gh/schardtbc/iexcloud) -->
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest) 
 
 A TypeScript wrapper for the IEX Cloud financial data API.
+
+Forked from https://github.com/shardtbc/iexcloud_api_wrapper
 
 ## Usage
 
@@ -12,7 +13,7 @@ A TypeScript wrapper for the IEX Cloud financial data API.
 Use the npm cli to install as a dependancy into your project
 
 ```
-npm i git+https://git@github.com/schardtbc/iexcloud
+npm i git+https://git@github.com/arjd/iexcloud
 
 // OR
 
@@ -41,7 +42,7 @@ To test that everything installed correctly and the .env file is properly setup 
 const  iex = require( 'iexcloud' )
 
 const quote = async (sym) => {
-    const quoteData = await iex.stocks.quote(sym);
+    const quoteData = await iex.stock.quote(sym);
     // do something with returned quote data
     console.log(quoteData)
 };

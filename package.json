@@ -1,6 +1,6 @@
 {
-  "name": "iexcloud_api_wrapper",
-  "version": "1.1.5",
+  "name": "iexcloud",
+  "version": "1.2.0",
   "description": "IEX Investors Exchange, IEXCLOUD API Wrapper, Financial Data,TypeScript",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schardtbc/iexcloud_api_wrapper.git"
+    "url": "git+https://github.com/arjd/iexcloud.git"
   },
   "keywords": [
     "IEX",
@@ -26,12 +26,12 @@
     "MARKET-DATA",
     "API-WRAPPER"
   ],
-  "author": "Bruce C. Schardt",
+  "author": "Adam Dornford",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/schardtbc/iexcloud_api_wrapper/issues"
+    "url": "https://github.com/arjd/iexcloud/issues"
   },
-  "homepage": "https://github.com/schardtbc/iexcloud_api_wrapper#readme",
+  "homepage": "https://github.com/arjd/iexcloud#readme",
   "devDependencies": {
     "@types/jest": "^23.3.11",
     "jest": "^24.1.0",

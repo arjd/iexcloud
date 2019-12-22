@@ -27,10 +27,10 @@ To test that everything installed correctly and the .env file is properly setup 
 
 ```javascript
 
-const  iex = require( 'iexcloud_api_wrapper' )
+const  iex = require( 'iexcloud' )
 
 const quote = async (sym) => {
-    const quoteData = await iex.stocks.quote(sym);
+    const quoteData = await iex.stock.quote(sym);
     // do something with returned quote data
     console.log(quoteData)
 };
